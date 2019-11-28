@@ -45,3 +45,10 @@ spec:
             port: 8080
           initialDelaySeconds: 15
           periodSeconds: 20
+        resources:
+          limits:
+            cpu: 0.5
+            memory: "600Mi"
+          requests:
+            cpu: 100m
+            memory: "300Mi"

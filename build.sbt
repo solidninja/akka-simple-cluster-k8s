@@ -13,13 +13,14 @@ val akkaHttpVersion = "10.1.10"
 val akkaManagementVersion = "1.0.5"
 
 libraryDependencies ++=Seq(
-  "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
-  "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
-  "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
-  "com.typesafe.akka" %% "akka-http-core" % akkaHttpVersion,
-  "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
   "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
   "com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion,
+  "com.typesafe.akka" %% "akka-discovery" % akkaVersion,
+  "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
+  "com.typesafe.akka" %% "akka-http-core" % akkaHttpVersion,
+  "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
+  "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
+
   "com.lightbend.akka.discovery" %% "akka-discovery-kubernetes-api" % akkaManagementVersion,
   "com.lightbend.akka.management" %% "akka-management" % akkaManagementVersion,
   "com.lightbend.akka.management" %% "akka-management-cluster-http" % akkaManagementVersion,
@@ -27,5 +28,5 @@ libraryDependencies ++=Seq(
 //  "com.lightbend.akka.discovery" %% "akka-discovery-dns" % akkaManagementVersion,
 )
 
-dockerBaseImage := "adoptopenjdk:11"
+dockerBaseImage := "adoptopenjdk:11-jdk-hotspot"
 dockerUsername := Some("softwaremill")
